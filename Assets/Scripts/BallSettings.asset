@@ -1,0 +1,38 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3f62b53062223854ab4569d9da67e289, type: 3}
+  m_Name: BallSettings
+  m_EditorClassIdentifier: 
+  _ballMaterials:
+  - {fileID: 2100000, guid: d21fb4e352cff304baa9581e5b55ac2d, type: 2}
+  - {fileID: 2100000, guid: 17df02d9aa0a5b34b82ba5c862ac44df, type: 2}
+  - {fileID: 2100000, guid: f94e69a4e22432e4bb6e0532c545e2d5, type: 2}
+  - {fileID: 2100000, guid: 664e64aac512e8745be233c689d25946, type: 2}
+  - {fileID: 2100000, guid: c3dd9331ede913a44af5e4cdf7dfb341, type: 2}
+  - {fileID: 2100000, guid: 3adca1f5c11d5dc44a640319fd42973b, type: 2}
+  - {fileID: 2100000, guid: 8f59b06df1ff17242808e6a52713df31, type: 2}
+  - {fileID: 2100000, guid: 830a51417ee6dda4f811cdce43d10118, type: 2}
+  - {fileID: 2100000, guid: e0105687cc575a048b271695806a2cbb, type: 2}
+  - {fileID: 2100000, guid: 5ffe5a76ea99d044a83a0f0fb590fe02, type: 2}
+  - {fileID: 2100000, guid: 840540215bba52940ad84408315137bf, type: 2}
+  _ballProjectionMaterials:
+  - {fileID: 2100000, guid: cb13fc4415a48df458c37303cbbcb895, type: 2}
+  - {fileID: 2100000, guid: 3ca6a607bc5520f44b22e192f9c3904e, type: 2}
+  - {fileID: 2100000, guid: ab576ce2c952daf4a82db428c6817fef, type: 2}
+  - {fileID: 2100000, guid: 34e07c37b018e7c4f984871765dd0d7a, type: 2}
+  - {fileID: 2100000, guid: dded716f88603ec47a0792ca08a6efc3, type: 2}
+  - {fileID: 2100000, guid: 284436daf75c491409e74b61cd9430fa, type: 2}
+  - {fileID: 2100000, guid: bc0b68d284af5694aa4dee3355ceafba, type: 2}
+  - {fileID: 2100000, guid: 2c6fde463f877fa4da36c3af804a4e88, type: 2}
+  - {fileID: 2100000, guid: 9c06dd5fd657b154daf47bbd53eb9f07, type: 2}
+  - {fileID: 2100000, guid: 21543b128f725eb499c2c0b8c482f795, type: 2}
+  - {fileID: 2100000, guid: 3c196942d916a3f45ab0bac48a5969ec, type: 2}
