@@ -11,13 +11,12 @@ public class ActiveItem : MonoBehaviour
     public bool IsDead;
     public Projection Projection;
     [SerializeField] protected TextMeshProUGUI _levelText;
-    [SerializeField] private Transform _visualTransform;
-    [SerializeField] private SphereCollider _collider;
-    [SerializeField] private SphereCollider _trigger;
+    [SerializeField] protected SphereCollider _collider;
+    [SerializeField] protected SphereCollider _trigger;
     [SerializeField] private float _dropSpeed = 1.2f;
-    [SerializeField] private Animator _animator;
+    [SerializeField] protected Animator _animator;
 
-    private void Start()
+    protected virtual void Start()
     {
         Projection.Hide();
     }
@@ -46,11 +45,7 @@ public class ActiveItem : MonoBehaviour
         string numberString = number.ToString();
         _levelText.text = numberString;
 
-        Radius = Mathf.Lerp(0.4f, 0.7f, levelNumber / 10f);
-        Vector3 itemScale = Vector3.one * Radius * 2f;
-        _visualTransform.localScale = itemScale;
-        _collider.radius = Radius;
-        _trigger.radius = Radius + 0.1f;
+       
       
     }
 
