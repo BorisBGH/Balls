@@ -144,7 +144,7 @@ Rigidbody:
   m_ImplicitTensor: 1
   m_UseGravity: 1
   m_IsKinematic: 0
-  m_Interpolate: 0
+  m_Interpolate: 1
   m_Constraints: 120
   m_CollisionDetection: 0
 --- !u!114 &746610211340563265
@@ -159,19 +159,20 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: fa52ff4a7ff8ff34ca417fa71566c597, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  ItemType: 1
   LevelNumber: 0
   Radius: 0.4
   Rigidbody: {fileID: 6088922901507024532}
   IsDead: 0
   Projection: {fileID: 5935472865454405577}
   _levelText: {fileID: 6965131451372754119}
-  _visualTransform: {fileID: 8419409907550182739}
   _collider: {fileID: 5413354065374561280}
   _trigger: {fileID: 8802383829478017467}
   _dropSpeed: 1.2
   _animator: {fileID: 5891814573662513488}
   _ballSettings: {fileID: 11400000, guid: cc30a0fd364c2044c826eb8a18492027, type: 2}
   _renderer: {fileID: 3939980552886370455}
+  _visualTransform: {fileID: 8419409907550182739}
 --- !u!1 &1622748485673182036
 GameObject:
   m_ObjectHideFlags: 0

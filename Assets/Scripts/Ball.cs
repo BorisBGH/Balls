@@ -25,4 +25,9 @@ public class Ball : ActiveItem
         Projection.SetUp(_ballSettings._ballProjectionMaterials[LevelNumber], _levelText.text, Radius);
     }
 
+    public override void DoEffect()
+    {
+        base.DoEffect();
+        IncreaseLevel();
+    }
 }

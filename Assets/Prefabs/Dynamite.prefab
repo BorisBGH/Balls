@@ -431,7 +431,7 @@ Rigidbody:
   m_ImplicitTensor: 1
   m_UseGravity: 1
   m_IsKinematic: 0
-  m_Interpolate: 0
+  m_Interpolate: 1
   m_Constraints: 120
   m_CollisionDetection: 0
 --- !u!114 &1418581993516942385
@@ -446,6 +446,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 18c3457690d808c4eb865fb82bb449dc, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  ItemType: 5
   LevelNumber: 0
   Radius: 0.4
   Rigidbody: {fileID: 376716139285979432}
@@ -456,7 +457,7 @@ MonoBehaviour:
   _trigger: {fileID: 1030455969108589234}
   _dropSpeed: 1.2
   _animator: {fileID: 4250053877509784451}
-  _affectRadius: 2.04
+  _affectRadius: 2.2
   _forceValue: 995.2
   _affectArea: {fileID: 8287949190127827450}
   _effectPref: {fileID: 2398608829508964987, guid: f387ac791007951459ed6a93dfa675bf,
@@ -778,7 +779,7 @@ Transform:
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 4.08, y: 4.08, z: 4.08}
+  m_LocalScale: {x: 4.4, y: 4.4, z: 4.4}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 6097682021200916883}

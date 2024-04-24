@@ -2,9 +2,9 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Dynamite : ActiveItem
+public class Star : ActiveItem
 {
-    [Header("Dynamite")]
+    [Header("Star")]
     [SerializeField] private float _affectRadius = 1.5f;
     [SerializeField] private float _forceValue;
     [SerializeField] private GameObject _affectArea;
@@ -18,11 +18,6 @@ public class Dynamite : ActiveItem
     }
 
 
-    [ContextMenu("Explode")]
-    public void Explode()
-    {
-        StartCoroutine(AffectProcess());
-    }
 
     private IEnumerator AffectProcess()
     {
@@ -33,18 +28,15 @@ public class Dynamite : ActiveItem
         Collider[] colliders = Physics.OverlapSphere(transform.position, _affectRadius);
         foreach (Collider collider in colliders)
         {
-            Rigidbody rigidbody = collider.attachedRigidbody;
-            if (rigidbody)
+            if (collider.attachedRigidbody)
             {
-                Vector3 fromTo = (rigidbody.transform.position - transform.position).normalized;
-                rigidbody.AddForce(fromTo * _forceValue + Vector3.up * _forceValue * 0.5f);
-
-                PassiveItem passiveItem = rigidbody.GetComponent<PassiveItem>();
-                if (passiveItem)
+                ActiveItem activeItem = collider.attachedRigidbody.GetComponent<ActiveItem>();
+                if (activeItem)
                 {
-                    passiveItem.OnAffect();
+                    activeItem.IncreaseLevel();
                 }
             }
+
 
         }
 
@@ -57,12 +49,10 @@ public class Dynamite : ActiveItem
         _affectArea.transform.localScale = Vector3.one * _affectRadius * 2f;
     }
 
+    [ContextMenu("DoEffect")]
     public override void DoEffect()
     {
         base.DoEffect();
-        Explode();
+        StartCoroutine(AffectProcess());
     }
-
-
-
 }

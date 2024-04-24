@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using TMPro;
 using UnityEngine;
 
-public class ActiveItem : MonoBehaviour
+public class ActiveItem : Item
 {
     public int LevelNumber;
     public float Radius;
@@ -67,6 +67,10 @@ public class ActiveItem : MonoBehaviour
         Rigidbody.velocity = Vector3.down * _dropSpeed;
     }
 
+    public virtual void DoEffect()
+    {
+
+    }
     public void Disable()
     {
         _trigger.enabled = false;

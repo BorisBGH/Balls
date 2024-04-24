@@ -13,23 +13,66 @@ public class CollapseManager : MonoBehaviour
 
     public void Collapse(ActiveItem itemA, ActiveItem itemB)
     {
-        StartCoroutine(CollapseProcess(itemA, itemB));
+        ActiveItem fromItem;
+        ActiveItem toItem;
+
+        if (itemA.transform.position.y < itemB.transform.position.y || itemA.Rigidbody.velocity.magnitude < itemB.Rigidbody.velocity.magnitude)
+        {
+            fromItem = itemB;
+            toItem = itemA;
+        }
+        else
+        {
+            fromItem = itemA;
+            toItem = itemB;
+        }
+
+        StartCoroutine(CollapseProcess(fromItem, toItem));
     }
 
-    public IEnumerator CollapseProcess(ActiveItem itemA, ActiveItem itemB)
+    public IEnumerator CollapseProcess(ActiveItem fromItem, ActiveItem toItem)
     {
-        itemA.Disable();
-        Vector3 startPos = itemA.transform.position;
-        for (float t = 0f; t < 1f; t += Time.deltaTime / 0.08f)
+        fromItem.Disable();
+
+        if (fromItem.ItemType == ItemType.Ball || toItem.ItemType == ItemType.Ball)
         {
-            itemA.transform.position = Vector3.Lerp(startPos, itemB.transform.position, t);
-            yield return null;
+            Vector3 startPos = fromItem.transform.position;
+            for (float t = 0f; t < 1f; t += Time.deltaTime / 0.08f)
+            {
+                fromItem.transform.position = Vector3.Lerp(startPos, toItem.transform.position, t);
+                yield return null;
+
+            }
+        }
+
+        if (fromItem.ItemType == ItemType.Ball && fromItem.ItemType == ItemType.Ball)
+        {
+            fromItem.transform.position = toItem.transform.position;
+            fromItem.Die();
+            toItem.DoEffect();
+            ExplodeBall(toItem.transform.position, toItem.Radius + 0.15f);
 
         }
-        itemA.transform.position = itemB.transform.position;
-        itemA.Die();
-        itemB.IncreaseLevel();
-        ExplodeBall(itemB.transform.position, itemB.Radius + 0.15f);
+        else
+        {
+            if (fromItem.ItemType == ItemType.Ball)
+            {
+                fromItem.Die();
+            }
+            else
+            {
+                fromItem.DoEffect();
+            }
+            if (toItem.ItemType == ItemType.Ball)
+            {
+                toItem.Die();
+            }
+            else
+            {
+                toItem.DoEffect();
+            }
+        }
+
 
     }
 

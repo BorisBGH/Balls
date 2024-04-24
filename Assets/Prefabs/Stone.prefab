@@ -46,6 +46,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 404b8e283cce6d64db404c15d97869fc, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  ItemType: 3
   _dieEffect: {fileID: 2031947712231836720, guid: 85edcc0f425191f46a383fc8476472a9,
     type: 3}
   _level: 2
