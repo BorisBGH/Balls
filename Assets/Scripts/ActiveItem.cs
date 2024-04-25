@@ -31,10 +31,23 @@ public class ActiveItem : Item
         Invoke(nameof(EnableTrigger), 0.08f);
     }
 
+    public void DecreaseLevel()
+    {
+        if (LevelNumber > 0)
+        {
+            LevelNumber--;
+            SetLevel(LevelNumber);
+            _animator.SetTrigger("IncreaseLevel");
+            _trigger.enabled = false;
+            Invoke(nameof(EnableTrigger), 0.08f);
+        }
+
+    }
+
     [ContextMenu("GetZeroLevel")]
     public void GetZeroLevel()
     {
-       
+
         SetLevel(0);
     }
 
@@ -45,8 +58,8 @@ public class ActiveItem : Item
         string numberString = number.ToString();
         _levelText.text = numberString;
 
-       
-      
+
+
     }
 
     public void SetToTube()
@@ -91,14 +104,14 @@ public class ActiveItem : Item
 
     private void OnTriggerEnter(Collider other)
     {
-        if(IsDead) return;
+        if (IsDead) return;
 
         if (other.attachedRigidbody)
         {
             ActiveItem otherItem = other.attachedRigidbody.GetComponent<ActiveItem>();
             if (otherItem)
             {
-                if(!otherItem.IsDead && LevelNumber ==  otherItem.LevelNumber)
+                if (!otherItem.IsDead && LevelNumber == otherItem.LevelNumber)
                 {
                     CollapseManager.Instance.Collapse(this, otherItem);
                 }
