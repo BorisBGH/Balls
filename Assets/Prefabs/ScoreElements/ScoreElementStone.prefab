@@ -257,9 +257,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   ItemType: 3
-  _currentScore: 4
+  CurrentScore: 0
   _text: {fileID: 3432423151599619271}
-  _iconTransform: {fileID: 3755456768065868080}
+  IconTransform: {fileID: 2364894454704821221}
   _animationCurve:
     serializedVersion: 2
     m_Curve:
@@ -329,6 +329,6 @@ MonoBehaviour:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
-  _level: 0
+  Level: 0
   FlyingIconPref: {fileID: 1685746403566618140, guid: 4fe9614513768dd4198bf475aa158f63,
     type: 3}

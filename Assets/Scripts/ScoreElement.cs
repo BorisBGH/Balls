@@ -8,12 +8,14 @@ using UnityEngine.Rendering;
 public class ScoreElement : MonoBehaviour
 {
     public ItemType ItemType;
-    [SerializeField] public int CurrentScore;
-    [SerializeField] private TextMeshProUGUI _text;
-    [SerializeField] private Transform _iconTransform;
-    [SerializeField] private AnimationCurve _animationCurve;
-    [SerializeField] public int Level;
+    public int CurrentScore;
+    public int Level;
     public GameObject FlyingIconPref;
+    public Transform IconTransform;
+
+    [SerializeField] private TextMeshProUGUI _text;
+    [SerializeField] private AnimationCurve _animationCurve;
+
 
     [ContextMenu("AddOne")]
     public void AddOne()
@@ -26,13 +28,15 @@ public class ScoreElement : MonoBehaviour
         _text.text = CurrentScore.ToString();
 
         StartCoroutine(AddAnimation());
-      //  ScoreManager.Instance.CheckWin();
+
     }
 
-    public void SetUp(int number)
+    public virtual void SetUp(Task task)
     {
-        Level = number;
-        _text.text = number.ToString();
+
+        CurrentScore = task.Number;
+        _text.text = task.Number.ToString();
+        Level = task.LevelNumber;
     }
 
     private IEnumerator AddAnimation()
@@ -40,10 +44,10 @@ public class ScoreElement : MonoBehaviour
         for (float t = 0; t < 1; t += Time.deltaTime * 1.8f)
         {
             float scale = _animationCurve.Evaluate(t);
-            _iconTransform.localScale = Vector3.one * scale;
+            IconTransform.localScale = Vector3.one * scale;
             yield return null;
         }
-        _iconTransform.localScale = Vector3.one;
-       
+        IconTransform.localScale = Vector3.one;
+
     }
 }

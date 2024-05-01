@@ -24,12 +24,19 @@ public class Stone : PassiveItem
                 CreateChildRock(_level - 1);
             }
         }
+        else
+        {
+            ScoreManager.Instance.AddScore(ItemType, transform.position);
+        }
         Die();
     }
 
     private void CreateChildRock(int level)
     {
-        Stone newRock = Instantiate(_stonePref, transform.position + new Vector3(Random.Range(transform.position.x-0.7f, transform.position.x+0.7f),0f,0f), Quaternion.identity);
+        //float childRockXpos = Random.Range(transform.position.x - 0.3f, transform.position.x + 0.3f);
+        //float clampedChildRockXpos = Mathf.Clamp(childRockXpos,-2.7f, 2.7f);
+        Stone newRock = Instantiate(_stonePref, transform.position + new Vector3(transform.position.x, 0f,0f), Quaternion.identity);
+        //newRock.transform.position += new Vector3(clampedChildRockXpos, 0f, 0f);
         newRock.SetLevel(level);
     }
 

@@ -23,6 +23,11 @@ public class Ball : ActiveItem
         _renderer.material = _ballSettings._ballMaterials[levelNumber];
 
         Projection.SetUp(_ballSettings._ballProjectionMaterials[LevelNumber], _levelText.text, Radius);
+
+        if (ScoreManager.Instance.AddScore(ItemType, transform.position, levelNumber))
+        {
+            Die();
+        }
     }
 
     public override void DoEffect()

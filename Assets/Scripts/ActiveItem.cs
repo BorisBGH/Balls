@@ -31,6 +31,7 @@ public class ActiveItem : Item
         Invoke(nameof(EnableTrigger), 0.08f);
     }
 
+    [ContextMenu("DecreaseLevel")]
     public void DecreaseLevel()
     {
         if (LevelNumber > 0)

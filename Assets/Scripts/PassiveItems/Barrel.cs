@@ -16,7 +16,9 @@ public class Barrel : PassiveItem
     [ContextMenu("Die")]
     private void Die()
     {
-        Instantiate(_barrelExposion, transform.position, Quaternion.Euler(-90f,0,0));
+        Instantiate(_barrelExposion, transform.position, Quaternion.Euler(-90f, 0, 0));
         Destroy(gameObject);
+        ScoreManager.Instance.AddScore(ItemType, transform.position);
+
     }
 }
