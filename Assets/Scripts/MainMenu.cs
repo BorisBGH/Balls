@@ -15,7 +15,7 @@ public class MainMenu : MonoBehaviour
 
     private void Start()
     {
-        _coinsText.text = Progress.Instance.Coins.ToString();
+        _coinsText.text = "Coins " + Progress.Instance.Coins.ToString();
         _levelText.text = "Level " + Progress.Instance.Level.ToString();
         _startButton.onClick.AddListener(StartLevel);
         _backgroundImage.color = Progress.Instance.BackgroundColor;

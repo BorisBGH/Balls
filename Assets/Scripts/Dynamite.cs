@@ -14,6 +14,7 @@ public class Dynamite : ActiveItem
     protected override void Start()
     {
         base.Start();
+        SetLevel(LevelNumber);
         _affectArea.SetActive(false);
     }
 

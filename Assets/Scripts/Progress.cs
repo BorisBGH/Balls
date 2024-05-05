@@ -68,6 +68,7 @@ public class Progress : MonoBehaviour
             color.r = progressData.BackgroundColor[0];
             color.g = progressData.BackgroundColor[1];
             color.b = progressData.BackgroundColor[2];
+            color.a = progressData.BackgroundColor[3];
             BackgroundColor = color;
             IsMusicOn = progressData.IsMusicOn;
 
@@ -77,6 +78,7 @@ public class Progress : MonoBehaviour
             Coins = 0;
             Level = 1;
             BackgroundColor = Color.blue * 0.5f;
+            BackgroundColor.a = 250f;
             IsMusicOn = true;
         }
     }
